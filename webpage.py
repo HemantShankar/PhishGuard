@@ -2,7 +2,7 @@ import streamlit as st
 import pickle  
 import pandas as pd
 import numpy as np
-from xgboost import XGBClassifier
+# from xgboost import XGBClassifier
 from url_script_main import featureExtraction
 
 

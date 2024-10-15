@@ -1,0 +1,7 @@
+streamlit
+xgboost
+requests
+beautifulsoup4
+whois
+pandas
+numpy

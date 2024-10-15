@@ -5,3 +5,4 @@ beautifulsoup4
 whois
 pandas
 numpy
+bs4

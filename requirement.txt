@@ -1,5 +1,5 @@
+xgboost>=1.0.0
 streamlit
-xgboost
 requests
 beautifulsoup4
 whois

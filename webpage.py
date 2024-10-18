@@ -35,10 +35,11 @@ st.sidebar.info(
     """
 )
 # Header
-st.markdown("<h1 style='text-align: center; margin-top: -30px; color: white;'>URL Phishing Detection</h1>", unsafe_allow_html=True)
-st.markdown("<h4 style='text-align: center; margin-top: -25px; color: blue;'>Protect yourself from malicious websites</h4>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; font-size: 67px; margin-top: -30px; color: white;'>URL Phishing Detection</h1>", unsafe_allow_html=True)
+st.markdown("<h2 style='text-align: center; margin-top: -25px; color: blue;'>Protect yourself from malicious websites</h2>", unsafe_allow_html=True)
 st.write("") # Adding space
- 
+st.write("") # Adding space
+st.write("") # Adding space
 # Input section
 url_input = st.text_input("Enter the URL you want to check", placeholder="https://example.com", max_chars=1064)
 
@@ -56,10 +57,13 @@ if st.button("Check URL"):
     else:
         st.warning("Please enter a valid URL")   
 
+st.write("") # Adding space
+st.write("") # Adding space
+st.write("") # Adding space
 # Footer
 st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown(
-    "<p style='text-align: center; margin-top: -15px; color: gray;'>Developed by Hemant Shankar | Powered by Machine Learning</p>",
+    "<p style='text-align: center; font-size: 22px; margin-top: -15px; color: gray;'>Developed by Hemant Shankar | Powered by Machine Learning</p>",
     unsafe_allow_html=True
 )
 # Custom HTML for social media links with icons
@@ -76,8 +80,8 @@ st.markdown("""
             text-decoration: none;
         }
         .social-icons img {
-            width: 40px;  /* Adjust the size of icons */
-            height: 40px;
+            width: 55px;  /* Adjust the size of icons */
+            height: 55px;
         }
     </style>
 """, unsafe_allow_html=True)

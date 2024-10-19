@@ -12,9 +12,10 @@ import requests
 
 def getDomain(url):  
   domain = urlparse(url).netloc
-  if re.match(r"^www\.", domain):
+  if re.match(r"^www.", domain):
     domain = domain.replace("www.", "")
   return domain
+
 
 # 2.Checks for IP address in URL (Have_IP)
 def havingIP(url):
@@ -194,33 +195,47 @@ def forwarding(response):
 
 def featureExtraction(url):
     features = []
-
+    # print("Helloded")
     # Address bar based features (10)
     try:
         # features.append(getDomain(url))
+        # print('in')
         features.append(havingIP(url))
+        # print('1')
         features.append(haveAtSign(url))
+        # print('2')
         features.append(getLength(url))
+        # print('3')
         features.append(getDepth(url))
+        # print('4')
         features.append(redirection(url))
+        # print('5')
         features.append(httpDomain(url))
+        # print('6')
         features.append(tinyURL(url))
+        # print('7')
         features.append(prefixSuffix(url))
+        # print('8')
     except Exception as e:
         # print(f"Error processing address bar features for URL {url}: {e}")/
-        features.extend([0,0,0,0,0,0,0,0,0])  # Append None for the failed features
+        features.extend([0,0,0,0,0,0,0,0])  # Append None for the failed features
 
     # Domain based features (4)
     dns = 0
     try:
         domain_name = whois.whois(urlparse(url).netloc)
         features.append(dns)
+        # print('9')
         features.append(web_traffic(url))
+        # print('10')
         features.append(domainAge(domain_name))
+        # print('11')
         features.append(domainEnd(domain_name))
+        # print('12')
     except Exception as e:
         # print(f"Error processing domain features for URL {url}: {e}")
-        features.extend([1, 1, 1])  # Append default values in case of failure
+        print("Failurec")
+        features.extend([1, 1, 1, 1])  # Append default values in case of failure
 
     # HTML & JavaScript based features (4)
     try:

@@ -8,13 +8,12 @@ from url_script_main import featureExtraction
 
 with open('XGBoostClassifier.pickle.dat', 'rb') as file:
     model = pickle.load(file)
-
 # Function to process the URL input and predict using the loaded model
 def predict_url(url):
     # st.write(f"Processing the URL....")
     processed_url = featureExtraction(url)
 
-
+    # st.write(processed_url)
     # st.write("Model is predicting.....")
     prediction = model.predict(np.array(processed_url).reshape(1, -1))
     # st.write(f"Generating Result....")  
@@ -36,7 +35,7 @@ st.sidebar.info(
 )
 # Header
 st.markdown("<h1 style='text-align: center; font-size: 67px; margin-top: -30px; color: white;'>URL Phishing Detection</h1>", unsafe_allow_html=True)
-st.markdown("<h2 style='text-align: center; margin-top: -25px; color: blue;'>Protect yourself from malicious websites</h2>", unsafe_allow_html=True)
+st.markdown("<h2 style='text-align: center; margin-top: -50px; color: blue;'>Protect yourself from malicious websites</h2>", unsafe_allow_html=True)
 st.write("") # Adding space
 st.write("") # Adding space
 st.write("") # Adding space
@@ -57,6 +56,10 @@ if st.button("Check URL"):
     else:
         st.warning("Please enter a valid URL")   
 
+st.write("") # Adding space
+st.write("") # Adding space
+st.write("") # Adding space
+st.write("") # Adding space
 st.write("") # Adding space
 st.write("") # Adding space
 st.write("") # Adding space

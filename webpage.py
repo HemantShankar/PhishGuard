@@ -6,7 +6,7 @@ import numpy as np
 from url_script_main import featureExtraction
 
 
-with open('XGBoostClassifier.pickle.dat', 'rb') as file:
+with open('fast.pickle.dat', 'rb') as file:
     model = pickle.load(file)
 # Function to process the URL input and predict using the loaded model
 def predict_url(url):

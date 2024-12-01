@@ -10,13 +10,9 @@ with open('fast.pickle.dat', 'rb') as file:
     model = pickle.load(file)
 # Function to process the URL input and predict using the loaded model
 def predict_url(url):
-    # st.write(f"Processing the URL....")
     processed_url = featureExtraction(url)
 
-    # st.write(processed_url)
-    # st.write("Model is predicting.....")
-    prediction = model.predict(np.array(processed_url).reshape(1, -1))
-    # st.write(f"Generating Result....")  
+    prediction = model.predict(np.array(processed_url).reshape(1, -1))  
     return prediction[0]
 
 
@@ -114,7 +110,7 @@ st.markdown(f'<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB9AAAAfQCA
 url_input = st.text_input("Enter the URL you want to check", placeholder="https://example.com", max_chars=1064)
 
 #Predict button
-# st.write("") # Adding space
+st.write("") # Adding space
 # col1, col2, col3, col4, col5 = st.columns([1, 1, 1,1,1]) # Making Horizontal division
 # with col3:
 if st.button("Check URL"):
